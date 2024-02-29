@@ -44,7 +44,6 @@ int main() {
 		// in some easy cases we must have points in the intersection.
 		if ((a - c).dist() < r - 1e-6 || (b - c).dist() < r - 1e-6 || ((a + b) / 2 - c).dist() < r - 1e-6) {
 			assert(!points.empty());
-		}
-	}
+		}}
     cout<<"Tests passed!"<<endl;
 }

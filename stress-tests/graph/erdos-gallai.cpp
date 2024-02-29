@@ -43,9 +43,7 @@ int main() {
 				rep(a,0,N) {
 					de[at] = a;
 					rec(at + 1);
-				}
-			}
-		};
+				}}};
 		rec(0);
 	}
 	cout << "Tests passed!" << endl;

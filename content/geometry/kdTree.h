@@ -40,9 +40,7 @@ struct Node {
 			int half = sz(vp)/2;
 			first = new Node({vp.begin(), vp.begin() + half});
 			second = new Node({vp.begin() + half, vp.end()});
-		}
-	}
-};
+		}}};
 
 struct KDTree {
 	Node* root;
@@ -70,5 +68,4 @@ struct KDTree {
 	// (requires an arbitrary operator< for Point)
 	pair<T, P> nearest(const P& p) {
 		return search(root, p);
-	}
-};
+	}};

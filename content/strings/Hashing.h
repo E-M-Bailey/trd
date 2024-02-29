@@ -22,8 +22,7 @@ struct H {
 		return H((ull)m) + (ull)(m >> 64); }
 	ull get() const { return x + !~x; }
 	bool operator==(H o) const { return get() == o.get(); }
-	bool operator<(H o) const { return get() < o.get(); }
-};
+	bool operator<(H o) const { return get() < o.get(); }};
 static const H C = (ll)1e11+3; // (order ~ 3e9; random also ok)
 
 struct HashInterval {
@@ -36,8 +35,7 @@ struct HashInterval {
 	}
 	H hashInterval(int a, int b) { // hash [a, b)
 		return ha[b] - ha[a] * pw[b - a];
-	}
-};
+	}};
 
 vector<H> getHashes(string& str, int length) {
 	if (sz(str) < length) return {};

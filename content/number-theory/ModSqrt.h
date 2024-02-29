@@ -34,5 +34,4 @@ ll sqrt(ll a, ll p) {
 		g = gs * gs % p;
 		x = x * gs % p;
 		b = b * g % p;
-	}
-}
+	}}

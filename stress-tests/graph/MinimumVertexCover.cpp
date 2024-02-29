@@ -16,8 +16,7 @@ vi coverHK(vector<vi>& g, int n, int m) {
 		for(auto &e: g[i]) if (!seen[e] && match[e] != -1) {
 			seen[e] = true;
 			q.push_back(match[e]);
-		}
-	}
+		}}
 	rep(i,0,n) if (!lfound[i]) cover.push_back(i);
 	rep(i,0,m) if (seen[i]) cover.push_back(n+i);
 	assert(sz(cover) == res);
@@ -47,8 +46,7 @@ int main() {
 					for(auto &x: cover) cout << x << endl;
 					abort();
 				} */
-			}
-		};
+			}};
 		vi cover1 = cover(gr, N, M);
 		vi cover2 = coverHK(gr, N, M);
 		assert(sz(cover1) == sz(cover2));

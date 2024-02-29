@@ -44,8 +44,6 @@ int main() {
 				cout << endl;
 				abort();
 	next:;
-			}
-		}
-	}
+			}}}
 	cout << "Tests passed!" << endl;
 }

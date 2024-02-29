@@ -32,16 +32,14 @@ public:
 				polys.push_back(poly);
 				strings.push_back(ss.str());
 				points.push_back(p);
-			}
-		}
+			}}
 		in.close();
 
 		ifstream out("insidePolygon.out");
 		answers.resize(points.size());
 		rep(i,0,answers.size()) {
 			out >> answers[i];
-		}
-	}
+		}}
 
 	virtual ~test_insidePolygon()
 	{
@@ -66,14 +64,11 @@ public:
 				for(auto &i:poly) i = i.rotate(alpha)+D;
 				p = p.rotate(alpha)+D;
 				check(insidePolygon(poly.begin(),poly.end(),p,true),a);
-			}
-		}
-	}
+			}}}
 
 	virtual int getCount() const
 	{
 		return points.size() + 20;
-	}
-};
+	}};
 
 KACTL_AUTOREGISTER_TEST(test_insidePolygon);

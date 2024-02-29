@@ -21,8 +21,7 @@ int main() {
 			auto best = actual.lower_bound(x)->second;
 			assert(best.first == f.p);
 			assert(best.second == f.q);
-		}
-	}
+		}}
 	cout<<"Tests passed!"<<endl;
 	return 0;
 }

@@ -60,12 +60,10 @@ public:
 			check((int)res.size(),3,s);
 			rep(i,0,res.size())
 				check(res[i],w[i],s);
-		}
-	}
+		}}
 
 	virtual int getCount() const {
 		return 5;
-	}
-};
+	}};
 
 KACTL_AUTOREGISTER_TEST(test_polygonCut);

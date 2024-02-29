@@ -24,14 +24,12 @@ struct VecSuffixArray {
 			rep(i,1,n) {
 				int a = sa[i-1], b = sa[i]; x[b] =
 					y[a] == y[b] && y[a + j] == y[b + j] ? p - 1 : p++;
-			}
-		}
+			}}
 		rep(i,1,n) rank[sa[i]] = i;
 		for (int i = 0, j; i < n - 1; lcp[rank[i++]] = k)
 			for (k && k--, j = sa[rank[i] - 1];
 					s[i + k] == s[j + k]; k++) ;
-	}
-};
+	}};
 
 string display(const string& s) {
 	string ret;
@@ -46,9 +44,7 @@ void gen(string& s, int at, int alpha, F f) {
 		rep(i,0,alpha) {
 			s[at] = (char)(i + 1);
 			gen(s, at+1, alpha, f);
-		}
-	}
-}
+		}}}
 
 void test(const string& s, int alpha) {
 	// cout << display(s) << endl;
@@ -76,8 +72,7 @@ void test(const string& s, int alpha) {
 	if (lcp != sa.lcp) {
 		cout << "lcp fails for " << display(s) << ' ' << alpha << endl;
 		assert(lcp == sa.lcp);
-	}
-}
+	}}
 
 const int MAXN = 1e5;
 namespace old {
@@ -96,8 +91,7 @@ void count_sort(vector<pli> &b, int bits) { // (optional)
 		for (int i = 0; i < sz(b); i++)
 			res[w[(b[i].first >> move) & mask]++] = b[i];
 		swap(b, res);
-	}
-}
+	}}
 struct SuffixArray {
 	vector<int> a;
 	string s;
@@ -126,8 +120,7 @@ struct SuffixArray {
 				if (i + (1 << moc) < N)
 					b[i].first += a[i + (1 << moc)];
 				b[i].second = i;
-			}
-		}
+			}}
 		for (int i = 0; i < sz(a); i++)
 			a[i] = b[i].second;
 	}
@@ -148,8 +141,7 @@ struct SuffixArray {
 					h--;
 			}
 		return res;
-	}
-};
+	}};
 } // namespace kactl
 
 struct timeit {
@@ -160,8 +152,7 @@ struct timeit {
 		auto end = chrono::high_resolution_clock::now();
 		auto duration = chrono::duration_cast<chrono::milliseconds>(end - begin).count();
 		cerr << duration << "ms elapsed [" << label << "]" << endl;
-	}
-};
+	}};
 
 signed compare() {
 	srand(0);
@@ -191,9 +182,7 @@ signed compare() {
 			// cout << sa.sa[100] << endl;
 			rep(i,0,sz(S)+1) {
 				assert((res[i] == array<int, 2>{sa.sa[i], sa.lcp[i]}));
-			}
-		}
-	}
+			}}}
 	return 0;
 }
 
@@ -209,10 +198,7 @@ void stress(bool onlySmall = false) {
 				gen(s, 0, alpha, [&]() {
 					test(s, alpha);
 				});
-			}
-		}
-	}
-}
+			}}}}
 
 void perf() {
 	string str;

@@ -41,12 +41,10 @@ public:
 		} else if (subcase == 8) {
 			P p[] = {P(3,0),P(3,3),P(0,3)};
 			check(polygonCenter(p,p+3),P(2,2));
-		}
-	}
+		}}
 
 	virtual int getCount() const {
 		return 9;
-	}
-};
+	}};
 
 KACTL_AUTOREGISTER_TEST(test_polygonCenter);

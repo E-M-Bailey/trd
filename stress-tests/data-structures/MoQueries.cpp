@@ -61,14 +61,12 @@ void test(int n, int q) {
 			assert(res[i] == -1);
 		} else {
 			assert(res[i] == l + (r - l) * 10);
-		}
-	}
+		}}
 	// (This inequality holds for random queries; in general it's off by a small constant)
 	if (n > 100 && q > 100) {
 		// cout << n << ' ' << q << ' ' << ops / (n * sqrt(q)) << endl;
 		assert(ops < n * sqrt(q));
-	}
-}
+	}}
 
 #undef K
 
@@ -93,8 +91,7 @@ void del(int i, int end) {
 	} else {
 		assert(path.back() == i);
 		path.pop_back();
-	}
-}
+	}}
 int calc() { return sum; }
 
 vi moTree(vector<array<int, 2>> Q, vector<vi>& ed, int root=0){
@@ -124,9 +121,7 @@ vi moTree(vector<array<int, 2>> Q, vector<vi>& ed, int root=0){
 		if (end) res[qi] = calc();
 	}
 	return res;
-}
-
-}
+}}
 
 void testTr(int n, int q) {
 	ops = 0;
@@ -160,8 +155,7 @@ void testTr(int n, int q) {
 		while (l != r) sum += val[l], l = par[l];
 		sum += val[l];
 		assert(res[i] == sum);
-	}
-}
+	}}
 
 int main() {
 	srand(2);

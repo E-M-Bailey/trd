@@ -29,8 +29,7 @@ int segmentIntersection(const P& s1, const P& e1,
         return 0;
     r1 = s1-v1*a2/a;
     return 1;
-}
-}
+}}
 typedef Point<double> P;
 bool eq(P a, P b) {
     return (a-b).dist()<1e-8;
@@ -54,7 +53,6 @@ int main() {
             vector<P> b({tmp1, tmp2});
             sort(all(b));
             assert(eq(a[0], b[0]) && eq(a[1],b[1]));
-        }
-    }
+        }}
     cout<<"Tests passed!"<<endl;
 }

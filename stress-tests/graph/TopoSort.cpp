@@ -26,8 +26,7 @@ int main() {
 			assert(!seen[i]++);
 			for (int j : ed[i])
 				assert(!seen[j]);
-		}
-	}
+		}}
 	cout << "Tests passed!" << endl;
 	return 0;
 }

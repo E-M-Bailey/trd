@@ -14,8 +14,7 @@ pair<Node*, Node*> split2(Node* n, int v) {
 		n->r = pa.first;
 		n->recalc();
 		return {n, pa.second};
-	}
-}
+	}}
 
 int ra() {
 	static unsigned x;

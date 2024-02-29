@@ -76,8 +76,7 @@ int main() {
 			if (flow > 0) {
 				ekFlows[i] += flow;
 				ekFlows[e.first] -= flow;
-			}
-		}
+			}}
 		assert(flows == ekFlows);
 
 		// PushRelabel computes a cut
@@ -92,8 +91,7 @@ int main() {
 			}
 			if (!pr.leftOfMinCut(i) && pr.leftOfMinCut(e.dest)) {
 				assert(e.f <= 0);
-			}
-		}
+			}}
 
 		// min cut = max flow
 		assert(acrossCut == flow);

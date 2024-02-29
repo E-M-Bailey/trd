@@ -23,8 +23,7 @@ struct A {
 	A operator*(A o) { return {(int)(1LL*x*o.x % M), b*o.b}; }
 	explicit operator ull() { return x ^ (ull) b << 21; }
 	bool operator==(A o) const { return (ull)*this == (ull)o; }
-	bool operator<(A o) const { return (ull)*this < (ull)o; }
-};
+	bool operator<(A o) const { return (ull)*this < (ull)o; }};
 typedef A<1000000007, A<1000000009, unsigned>> H;
 
 struct HashInterval {
@@ -37,8 +36,7 @@ struct HashInterval {
 	}
 	H hashInterval(int a, int b) { // hash [a, b)
 		return ha[b] - ha[a] * pw[b - a];
-	}
-};
+	}};
 
 vector<H> getHashes(string& str, int length) {
 	if (sz(str) < length) return {};

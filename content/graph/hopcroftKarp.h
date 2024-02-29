@@ -47,8 +47,7 @@ int hopcroftKarp(vector<vi>& g, vi& btoa) {
 				else if (btoa[b] != a && !B[b]) {
 					B[b] = lay;
 					next.push_back(btoa[b]);
-				}
-			}
+				}}
 			if (islast) break;
 			if (next.empty()) return res;
 			for (int a : next) A[a] = lay;
@@ -57,5 +56,4 @@ int hopcroftKarp(vector<vi>& g, vi& btoa) {
 		/// Use DFS to scan for augmenting paths.
 		rep(a,0,sz(g))
 			res += dfs(a, 0, g, btoa, A, B);
-	}
-}
+	}}

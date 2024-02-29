@@ -52,7 +52,6 @@ public:
 
 	virtual int getCount() const {
 		return cases+1;
-	}
-};
+	}};
 
 KACTL_AUTOREGISTER_TEST(test_Matrix);

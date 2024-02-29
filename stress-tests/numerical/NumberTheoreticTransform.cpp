@@ -49,8 +49,7 @@ int main() {
             ll sum = 0;
             rep(x, 0, sz(a2)) { sum = (sum + a[x] * modpow(root, k * x * (mod - 1) / sz(a))) % mod; }
             assert(sum == a2[k]);
-        }
-	}
+        }}
 	assert(res==res2);
 	cout<<"Tests passed!"<<endl;
 }

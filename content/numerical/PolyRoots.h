@@ -29,7 +29,6 @@ vector<double> polyRoots(Poly p, double xmin, double xmax) {
 				else h = m;
 			}
 			ret.push_back((l + h) / 2);
-		}
-	}
+		}}
 	return ret;
 }

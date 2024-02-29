@@ -27,9 +27,7 @@ template<class T> T edmondsKarp(vector<unordered_map<int, T>>& graph, int source
 					par[e.first] = x;
 					q[ptr++] = e.first;
 					if (e.first == sink) goto out;
-				}
-			}
-		}
+				}}}
 		return flow;
 out:
 		T inc = numeric_limits<T>::max();
@@ -41,6 +39,4 @@ out:
 			int p = par[y];
 			if ((graph[p][y] -= inc) <= 0) graph[p].erase(y);
 			graph[y][p] += inc;
-		}
-	}
-}
+		}}}

@@ -20,7 +20,6 @@ double det(vector<vector<double>>& a) {
 		rep(j,i+1,n) {
 			double v = a[j][i] / a[i][i];
 			if (v != 0) rep(k,i+1,n) a[j][k] -= v * a[i][k];
-		}
-	}
+		}}
 	return res;
 }

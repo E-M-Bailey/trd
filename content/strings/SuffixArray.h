@@ -38,5 +38,4 @@ struct SuffixArray {
 		for (int i = 0, j; i < n - 1; lcp[rank[i++]] = k)
 			for (k && k--, j = sa[rank[i] - 1];
 					s[i + k] == s[j + k]; k++);
-	}
-};
+	}};

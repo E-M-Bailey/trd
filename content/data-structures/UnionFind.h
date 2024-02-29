@@ -20,5 +20,4 @@ struct UF {
 		if (e[a] > e[b]) swap(a, b);
 		e[a] += e[b]; e[b] = a;
 		return true;
-	}
-};
+	}};

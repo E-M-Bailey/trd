@@ -20,8 +20,7 @@ vector<pii> randomSimpleGraphAsEdgeList(int n, int m) {
 			if (a == b) continue;
 			if (!seen.insert(minmax(a, b)).second) continue;
 			ed.push_back({a,b});
-		}
-	}
+		}}
 	return ed;
 }
 
@@ -65,8 +64,7 @@ vector<pii> randomRegularGraphAsEdgeList(int n, int k) {
 		if (rem[b] == 0) {
 			swap(cands[bi], cands.back());
 			cands.pop_back();
-		}
-	}
+		}}
 	assert(sz(ed) == n * k / 2);
 	return ed;
 fail:

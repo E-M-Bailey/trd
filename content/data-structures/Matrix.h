@@ -36,5 +36,4 @@ template<class T, int N> struct Matrix {
 			p >>= 1;
 		}
 		return a;
-	}
-};
+	}};

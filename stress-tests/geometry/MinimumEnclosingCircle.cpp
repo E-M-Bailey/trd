@@ -29,7 +29,6 @@ int main() {
 			}
 			assert(0);
 fail:;
-		}
-	}
+		}}
 	cout<<"Tests passed!"<<endl;
 }

@@ -55,7 +55,5 @@ struct PushRelabel {
 				} else if (cur[u]->c && H[u] == H[cur[u]->dest]+1)
 					addFlow(*cur[u], min(ec[u], cur[u]->c));
 				else ++cur[u];
-		}
-	}
-	bool leftOfMinCut(int a) { return H[a] >= sz(g); }
-};
+		}}
+	bool leftOfMinCut(int a) { return H[a] >= sz(g); }};

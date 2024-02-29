@@ -18,9 +18,7 @@ void test(int n, const vector<pii>& ed) {
 		for (int x : {ed[i].first, ed[i].second}) {
 			assert(!usedCols[x][col]);
 			usedCols[x][col] = 1;
-		}
-	}
-}
+		}}}
 
 void testCorrect() {
 	rep(n,0,7) {
@@ -30,8 +28,7 @@ void testCorrect() {
 			rep(i,0,n) rep(j,i+1,n) {
 				if (edbits & 1 << (it++)) {
 					ed.push_back({i, j});
-				}
-			}
+				}}
 			if (n <= 4 || n + sz(ed) <= 9) {
 				// test all k!*2^k input orders
 				sort(all(ed));
@@ -42,18 +39,14 @@ void testCorrect() {
 							swap(ed[ind].first, ed[ind].second);
 						}
 						test(n, ed);
-					}
-				} while (next_permutation(all(ed)));
+					}} while (next_permutation(all(ed)));
 			} else {
 				int its = n == 5 ? 10 : 5;
 				rep(it,0,its) {
 					shuffle_vec(ed);
 					for (auto& e : ed) if (randBool()) swap(e.first, e.second);
 					test(n, ed);
-				}
-			}
-		}
-	}
+				}}}}
 	rep(n,10,30) rep(it,0,200) {
 		int m = randIncl(n * (n-1) / 2);
 		vector<pii> ed = randomSimpleGraphAsEdgeList(n, m);
@@ -73,8 +66,7 @@ void testPerfRandom() {
 		int m = 20000;
 		auto ed = randomSimpleGraphAsEdgeList(n, m);
 		edgeColoring(n, ed);
-	}
-}
+	}}
 
 void testPerfRegular() {
 	int n = 3000;
@@ -92,5 +84,4 @@ int main(int argc, char** argv) {
 	else {
 		assert(argc == 1);
 		testCorrect();
-	}
-}
+	}}

@@ -26,8 +26,7 @@ Frac fracBS(F f, ll N) {
 			Frac mid{lo.p * adv + hi.p, lo.q * adv + hi.q};
 			if (abs(mid.p) > N || mid.q > N || dir == !f(mid)) {
 				adv -= step; si = 2;
-			}
-		}
+			}}
 		hi.p += lo.p * adv;
 		hi.q += lo.q * adv;
 		dir = !dir;

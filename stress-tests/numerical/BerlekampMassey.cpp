@@ -22,9 +22,7 @@ void gen(vector<ll>& v, int at, F f) {
 		rep(i,0,mod) {
 			v[at] = i;
 			gen(v, at+1, f);
-		}
-	}
-}
+		}}}
 
 int main() {
 	rep(n,1,5) {

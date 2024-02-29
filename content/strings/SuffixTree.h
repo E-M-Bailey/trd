@@ -33,8 +33,7 @@ struct SuffixTree {
 			while (q<r[m]) { v=t[v][toi(a[q])];  q+=r[v]-l[v]; }
 			if (q==r[m])  s[m]=v;  else s[m]=m+2;
 			q=r[v]-(q-r[m]);  m+=2;  goto suff;
-		}
-	}
+		}}
 
 	SuffixTree(string a) : a(a) {
 		fill(r,r+N,sz(a));
@@ -61,5 +60,4 @@ struct SuffixTree {
 		SuffixTree st(s + (char)('z' + 1) + t + (char)('z' + 2));
 		st.lcs(0, sz(s), sz(s) + 1 + sz(t), 0);
 		return st.best;
-	}
-};
+	}};

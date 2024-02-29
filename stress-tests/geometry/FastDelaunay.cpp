@@ -25,8 +25,7 @@ struct Bumpalloc {
 		new(r) T(move(x));
 		return r;
 	}
-	void reset() { bufp = sizeof buf; }
-} bumpalloc;
+	void reset() { bufp = sizeof buf; }} bumpalloc;
 
 // When not testing perf, we don't want to leak memory
 #ifndef TEST_PERF
@@ -45,8 +44,7 @@ void dela(A& v, F f) {
 	rep(i,0,sz(v)) lut[v[i]] = i;
 	for (int a = 0; a < sz(ret); a += 3) {
 		f(lut[ret[a]], lut[ret[a+1]], lut[ret[a+2]]);
-	}
-}
+	}}
 
 int main1() {
 	srand(2);
@@ -75,16 +73,13 @@ int main1() {
 
 		rep(i,0,N) rep(j,0,i) {
 			// identical
-			if (ps[i] == ps[j]) {  goto fail; }
-		}
+			if (ps[i] == ps[j]) {  goto fail; }}
 		if (false) rep(i,0,N) rep(j,0,i) rep(k,0,j) {
 			// colinear
-			if (ps[i].cross(ps[j], ps[k]) == 0) {  goto fail; }
-		}
+			if (ps[i].cross(ps[j], ps[k]) == 0) {  goto fail; }}
 		if (false) rep(i,0,N) rep(j,0,i) rep(k,0,j) rep(l,0,k) {
 			// concyclic
-			if (coc(i,j,k,l) || coc(i,j,l,k) || coc(i,l,j,k) || coc(i,l,k,j)) {  goto fail; }
-		}
+			if (coc(i,j,k,l) || coc(i,j,l,k) || coc(i,l,j,k) || coc(i,l,k,j)) {  goto fail; }}
 
 		bool allColinear = true;
 		if (N >= 3) {
@@ -118,8 +113,7 @@ int main1() {
 			double ra = ccRadius(top(ps[i]), top(ps[j]), top(ps[k]));
 			rep(l,0,N) {
 				if ((top(ps[l]) - c).dist() < ra - 1e-5) fail();
-			}
-		});
+			}});
 		if (!allColinear) {
 			rep(i,0,N) if (!used[i]) fail();
 		} else {

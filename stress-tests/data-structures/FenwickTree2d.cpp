@@ -27,9 +27,6 @@ int main() {
 				else {
 					sumto[i][j] = grid[i-1][j-1] + sumto[i-1][j] + sumto[i][j-1] - sumto[i-1][j-1];
 					assert(v == sumto[i][j]);
-				}
-			}
-		}
-	}
+				}}}}
 	cout<<"Tests passed!"<<endl;
 }

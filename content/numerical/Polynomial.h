@@ -20,5 +20,4 @@ struct Poly {
 		double b = a.back(), c; a.back() = 0;
 		for(int i=sz(a)-1; i--;) c = a[i], a[i] = a[i+1]*x0+b, b=c;
 		a.pop_back();
-	}
-};
+	}};

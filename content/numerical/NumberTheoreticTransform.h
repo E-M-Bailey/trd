@@ -38,8 +38,7 @@ void ntt(vl &a) {
 			ll z = rt[j + k] * a[i + j + k] % mod, &ai = a[i + j];
 			a[i + j + k] = ai - z + (z > ai ? mod : 0);
 			ai += (ai + z >= mod ? z - mod : z);
-		}
-}
+		}}
 vl conv(const vl &a, const vl &b) {
 	if (a.empty() || b.empty()) return {};
 	int s = sz(a) + sz(b) - 1, B = 32 - __builtin_clz(s), n = 1 << B;

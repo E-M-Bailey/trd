@@ -46,8 +46,7 @@ void rec(ull div, ll num, int ind, int factors) {
 		div *= afactors[ind];
 		if (num % div != 0) break;
 		factors++;
-	}
-}
+	}}
 
 const int MAXPR = 1e6;
 int main() {
@@ -60,8 +59,7 @@ int main() {
 		if (isPrime(n) != isprime[n]) {
 			cout << "fails for " << n << endl;
 			return 1;
-		}
-	}
+		}}
 
 	ull n = 1;
 	rep(i,0,1000000) {
@@ -72,7 +70,6 @@ int main() {
 			cout << "old says " << oldIsPrime(n) << endl;
 			cout << "new says " << isPrime(n) << endl;
 			assert(false);
-		}
-	}
+		}}
 	cout << "Tests passed!" << endl;
 }

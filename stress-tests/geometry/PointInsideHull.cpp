@@ -20,7 +20,6 @@ int main() {
 			P p{x,y};
 			assert(inPolygon(ps2, p, true) == (inHull(ps2, p, true)));
 			assert(inPolygon(ps2, p, false) == (inHull(ps2, p, false)));
-		}
-	}
+		}}
 	cout<<"Tests passed!"<<endl;
 }

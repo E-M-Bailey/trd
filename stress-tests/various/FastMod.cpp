@@ -9,8 +9,7 @@ struct OldBarrett {
 	ull reduce(ull a) {
 		ull q = (ull)((__uint128_t(m) * a) >> 64), r = a - q * b;
 		return r >= b ? r - b : r;
-	}
-};
+	}};
 
 // If EIGHT is defined, we compute eight simultaneous factorials, thus measuring
 // throughput instead of latency.

@@ -33,12 +33,10 @@ public:
 			double res = bs(4,9,sin,e)/2;
 			if (abs(res-M_PI) > e)
 				fail("");
-		}
-	}
+		}}
 
 	virtual int getCount() const {
 		return 4;
-	}
-};
+	}};
 
 KACTL_AUTOREGISTER_TEST(test_binarySearch);

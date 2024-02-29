@@ -32,7 +32,6 @@ int dfsMatching(vector<vi>& g, vi& btoa) {
 			if (find(j, g, btoa, vis)) {
 				btoa[j] = i;
 				break;
-			}
-	}
+			}}
 	return sz(btoa) - (int)count(all(btoa), -1);
 }

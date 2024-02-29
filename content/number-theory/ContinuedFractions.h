@@ -33,5 +33,4 @@ pair<ll, ll> approximate(d x, ll N) {
 		}
 		LP = P; P = NP;
 		LQ = Q; Q = NQ;
-	}
-}
+	}}

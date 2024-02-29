@@ -29,8 +29,7 @@ struct Point<double> {
 	P normal() const { return perp().unit(); }
 	// returns point rotated 'a' radians ccw around the origin
 	P rotate(double a) const {
-		return P(x*cos(a)-y*sin(a),x*sin(a)+y*cos(a)); }
-};
+		return P(x*cos(a)-y*sin(a),x*sin(a)+y*cos(a)); }};
 
 #include "../../content/geometry/ConvexHull.h"
 #include "../../content/geometry/LineHullIntersection.h"
@@ -134,8 +133,7 @@ int main() {
 					if (iter == 0) hits.emplace_back(r1, i);
 				}
 				any = 1;
-			}
-		}
+			}}
 
 		if (!any) {
 			assert(r.first == -1 && r.second == -1);
@@ -165,8 +163,7 @@ int main() {
 			}
 			else {
 				if (!(dist0 >= dist1)) FAIL();
-			}
-		}
+			}}
 
 		res = lineHull(q, p, ps);
 		pii R = {res[0], res[1]};
@@ -179,7 +176,6 @@ int main() {
 		else {
 			assert(R.first == r.second);
 			assert(R.second == r.first);
-		}
-	}
+		}}
 	cout<<"Tests passed!"<<endl;
 }

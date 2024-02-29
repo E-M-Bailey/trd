@@ -33,8 +33,6 @@ int main(int argc, char** argv) {
 			if (-m < a && a < m && -n < b && b < n) {
 				assert(0 <= r);
 				assert(r < m*n/g);
-			}
-		}
-	}
+			}}}
 	cout<<"Tests passed!"<<endl;
 }

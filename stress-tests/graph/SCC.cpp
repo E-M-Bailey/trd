@@ -23,8 +23,7 @@ template<class G> void dfs(int j, G &g) {
 			if (x == j) break;
 		}
 		no_components++;
-	}
-}
+	}}
 template<class G> vi scc(G &g) {
 	int n = sz(g);
 	orig.assign(n, 0); low = orig;
@@ -32,8 +31,7 @@ template<class G> vi scc(G &g) {
 	comp.assign(n, -1);
 	rep(i,0,n) if (comp[i] == -1) dfs(i, g);
 	return comp;
-}
-}
+}}
 
 int main() {
 	unsigned r = 1;
@@ -54,8 +52,7 @@ int main() {
 					r *= 12387123; r += 1231;
 					if ((r >> 6 & 31) == 3)
 						adj[i].push_back(j);
-				}
-			}
+				}}
 			vi comp2 = old::scc(adj);
 			scc(adj, [&](vi& v) {
 				compsize[ncomps] = sz(v);
@@ -76,8 +73,7 @@ int main() {
 				rep(j,0,N) {
 					if (seen[j]) assert(comp[j] <= comp[i]);
 					else assert(comp[j] != comp[i]);
-				}
-			}
+				}}
 
 			count++;
 		}

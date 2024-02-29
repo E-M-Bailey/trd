@@ -22,8 +22,7 @@ const int lut[6][6] = {
 	{2, 5, 0, 4, 3, 1},
 	{3, 4, 5, 0, 1, 2},
 	{4, 3, 1, 2, 5, 0},
-	{5, 2, 3, 1, 0, 4}
-};
+	{5, 2, 3, 1, 0, 4}};
 
 struct Tree {
 	typedef int T;
@@ -42,8 +41,7 @@ struct Tree {
 			if (e % 2) rb = f(s[--e], rb);
 		}
 		return f(ra, rb);
-	}
-};
+	}};
 
 }
 
@@ -86,9 +84,7 @@ int main() {
 				i = min(i, n-1);
 				tr.update(i, x);
 				v[i] = x;
-			}
-		}
-	}
+			}}}
 
 	rep(n,1,10) {
 		nonabelian::Tree tr(n);
@@ -107,8 +103,6 @@ int main() {
 				i = min(i, n-1);
 				tr.update(i, x);
 				v[i] = x;
-			}
-		}
-	}
+			}}}
 	cout<<"Tests passed!"<<endl;
 }

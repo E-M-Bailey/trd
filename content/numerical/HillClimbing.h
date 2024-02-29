@@ -18,7 +18,6 @@ template<class F> pair<double, P> hillClimb(P start, F f) {
 			p[0] += dx*jmp;
 			p[1] += dy*jmp;
 			cur = min(cur, make_pair(f(p), p));
-		}
-	}
+		}}
 	return cur;
 }

@@ -23,5 +23,4 @@ struct SubMatrix {
 	}
 	T sum(int u, int l, int d, int r) {
 		return p[d][r] - p[d][l] - p[u][r] + p[u][l];
-	}
-};
+	}};

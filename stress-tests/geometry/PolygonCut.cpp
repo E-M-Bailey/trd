@@ -22,8 +22,7 @@ int main() {
 			if (sz(r) == 1) {
 				if (i+1 == j || (j+1) % N == i) ;
 				else goto fail;
-			}
-		}
+			}}
 		if (p == q) { fail: continue; }
 
 		int count = 0;
@@ -47,7 +46,6 @@ int main() {
 		// cerr << N << endl;
 		// for(auto &x: ps) {
 			// cout << x.x << ' ' << x.y << endl;
-		// }
-	}
+		// }}
 	cout<<"Tests passed!"<<endl;
 }

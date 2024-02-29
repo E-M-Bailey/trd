@@ -41,12 +41,10 @@ public:
 			double res = gss(0,6,cos,e);
 			if (abs(res-M_PI) > e)
 				fail("");
-		}
-	}
+		}}
 
 	virtual int getCount() const {
 		return 6;
-	}
-};
+	}};
 
 KACTL_AUTOREGISTER_TEST(test_goldenSectionSearch);

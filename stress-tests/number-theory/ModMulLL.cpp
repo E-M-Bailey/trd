@@ -30,9 +30,7 @@ void test(ull lim, bool expectSuccess, bool useDoubles) {
 			cout << a << ' ' << b << ' ' << c << endl;
 			cout << l << ' ' << r << endl;
 			abort();
-		}
-	}
-}
+		}}}
 
 int main() {
 	const ull limDoubles = 1ULL << 52;

@@ -34,8 +34,7 @@ int exampleFunction1(vi mice, int* cats, int catsCount) {
 			/// This will be removed.
 			// And this kept.
 			sum += cats[i] * it;
-		}
-	}
+		}}
 	// Use tab indent and keep a line width of at most 63 chars,
 	// where tabs count as 2 characters wide.
 	//<---------------------Maximum width----------------------->

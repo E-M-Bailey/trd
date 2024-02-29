@@ -18,8 +18,7 @@ void FST(vi& a, bool inv) {
 				inv ? pii(v - u, u) : pii(v, u + v); // AND
 				// inv ? pii(v, u - v) : pii(u + v, u); // OR /// include-line
 				// pii(u + v, u - v);                   // XOR /// include-line
-		}
-	}
+		}}
 	// if (inv) for (int& x : a) x /= sz(a); // XOR only /// include-line
 }
 vi conv(vi a, vi b) {

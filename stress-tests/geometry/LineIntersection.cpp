@@ -15,7 +15,6 @@ int main() {
 		if (pa.first == 1) {
 			assert(lineDist(a, b, pa.second) < 1e-8);
 			assert(lineDist(c, d, pa.second) < 1e-8);
-		}
-	}
+		}}
 	cout<<"Tests passed!"<<endl;
 }

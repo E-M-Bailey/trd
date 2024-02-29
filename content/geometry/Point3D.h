@@ -40,5 +40,4 @@ template<class T> struct Point3D {
 	P rotate(double angle, P axis) const {
 		double s = sin(angle), c = cos(angle); P u = axis.unit();
 		return u*dot(u)*(1-c) + (*this)*c - cross(u)*s;
-	}
-};
+	}};

@@ -10,9 +10,7 @@ void gen(string& s, int at, int alpha, F f) {
 		rep(i,0,alpha) {
 			s[at] = (char)('A' + i);
 			gen(s, at+1, alpha, f);
-		}
-	}
-}
+		}}}
 
 void test(const string& s) {
 	vector<string> pats;
@@ -38,8 +36,7 @@ void test(const string& s) {
 			string& pat = pats[j];
 			if (hay.substr(i, pat.size()) == pat) {
 				ord.push_back(j);
-			}
-		}
+			}}
 		sort(all(positions[i]));
 
 		if (positions[i] != ord) {
@@ -54,9 +51,7 @@ void test(const string& s) {
 			trav(x, ord) cerr << x << ' ';
 			cerr << endl;
 			abort();
-		}
-	}
-}
+		}}}
 
 int main() {
 	// test ~4^10 strings

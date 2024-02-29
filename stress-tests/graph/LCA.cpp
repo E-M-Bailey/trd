@@ -40,8 +40,7 @@ struct LCA {
     ll distance(int a, int b) {
         int lca = query(a, b);
         return dist[a] + dist[b] - 2 * dist[lca];
-    }
-};
+    }};
 }
 
 
@@ -50,8 +49,7 @@ void getPars(vector<vi> &tree, int cur, int p, int d, vector<int> &par, vector<i
     depth[cur] = d;
     for(auto i: tree[cur]) if (i != p) {
         getPars(tree, i, cur, d+1, par, depth);
-    }
-}
+    }}
 void test_n(int n, int num) {
     for (int out=0; out<num; out++) {
         auto graph = genRandomTree(n);
@@ -75,9 +73,7 @@ void test_n(int n, int num) {
             int oldLca = old_lca.query(a,b);
             assert(oldLca == newLca);
             assert(binLca == newLca);
-        }
-    }
-}
+        }}}
 
 signed main() {
     test_n(10, 1000);

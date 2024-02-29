@@ -14,8 +14,7 @@ struct Bumpalloc {
 		new(r) T(move(x));
 		return r;
 	}
-	void reset() { bufp = sizeof buf; }
-} bumpalloc;
+	void reset() { bufp = sizeof buf; }} bumpalloc;
 
 // When not testing perf, we don't want to leak memory
 #ifndef TEST_PERF
@@ -53,8 +52,7 @@ int Directed_MST(int root, int NV, int NE) {
             if(E_copy[i].cost < In[v] && u != v) {
                 In[v] = E_copy[i].cost;
                 pre[v] = u;
-            }
-        }
+            }}
         rep(i,0,NV) {
             if(i == root)   continue;
             if(In[i] == inf)    return -1; // no solution
@@ -79,8 +77,7 @@ int Directed_MST(int root, int NV, int NE) {
                     ID[u] = cnt;
                 }
                 ID[v] = cnt++;
-            }
-        }
+            }}
         if(cnt == 0)    break;
         rep(i,0,NV) {
             if(ID[i] == -1) ID[i] = cnt++;
@@ -91,14 +88,12 @@ int Directed_MST(int root, int NV, int NE) {
             E_copy[i].v = ID[E_copy[i].v];
             if(E_copy[i].u != E_copy[i].v) {
                 E_copy[i].cost -= In[v];
-            }
-        }
+            }}
         NV = cnt;
         root = ID[root];
     }
     return ret;
-}
-}
+}}
 
 int adj[105][105];
 int main() {
@@ -133,8 +128,7 @@ int main() {
 				cout << endl;
 				for(auto &e: edges) {
 					cout << e.a << ' ' << e.b << ' ' << e.w << endl;
-				}
-			}
+				}}
 			ll sum = 0;
 			vector<vi> ch(n);
 			rep(i,0,n) {
@@ -143,8 +137,7 @@ int main() {
 					assert(par[i] != -1);
 					sum += adj[par[i]][i];
 					ch[par[i]].push_back(i);
-				}
-			}
+				}}
 			assert(sum == ans1);
 			vi seen(n), q = {r};
 			rep(qi,0,sz(q)) {
@@ -153,8 +146,7 @@ int main() {
 					for(auto &x: ch[s]) q.push_back(x);
 			}
 			assert(count(all(seen), 0) == 0);
-		}
-	}
+		}}
 	cout<<"Tests passed!"<<endl;
 	return 0;
 }

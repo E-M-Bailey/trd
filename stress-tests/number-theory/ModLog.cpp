@@ -18,9 +18,6 @@ int main() {
 					cerr << "FAIL" << endl;
 					cerr << "Expected log(" << a << ", " << b << ", " << m << ") = " << ans[b] << ", found " << res << endl;
 					return 1;
-				}
-			}
-		}
-	}
+				}}}}
 	cout<<"Tests passed!"<<endl;
 }

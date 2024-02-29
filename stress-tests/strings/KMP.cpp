@@ -9,9 +9,7 @@ void gen(string& s, int at, int alpha, F f) {
 		rep(i,0,alpha) {
 			s[at] = (char)('a' + i);
 			gen(s, at+1, alpha, f);
-		}
-	}
-}
+		}}}
 
 void test(const string& s) {
 	vi p = pi(s);
@@ -25,8 +23,7 @@ void test(const string& s) {
 fail:;
 		}
 		assert(maxlen == p[i]);
-	}
-}
+	}}
 
 int main() {
 	// string str; cin >> str; for(auto &x: pi(str)) cout << x; cout << endl;

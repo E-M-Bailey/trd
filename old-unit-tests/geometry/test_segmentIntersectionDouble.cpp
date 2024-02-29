@@ -44,8 +44,7 @@ public:
 		} else if (n == 2) {
 			if ((!(r1==res1) || !(r2==res2)) && (!(r2==res1) || !(r1==res2)))
 				fail(ss.str());
-		}
-	}
+		}}
 
 	template<class T>
 	void test1(T s1, T e1, T s2, T e2, int n, T r1, T r2) {
@@ -102,7 +101,6 @@ public:
 	virtual int getCount() const
 	{
 		return cases;
-	}
-};
+	}};
 
 KACTL_AUTOREGISTER_TEST(test_segmentIntersectionDouble);

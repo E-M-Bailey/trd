@@ -24,8 +24,7 @@ int main() {
 					make_pair(abs(it->first - x), it->second)).second;
 			assert(best.first == pa.first);
 			assert(best.second == pa.second);
-		}
-	}
+		}}
 	cout<<"Tests passed!"<<endl;
 	return 0;
 }

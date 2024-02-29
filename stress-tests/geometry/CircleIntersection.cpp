@@ -42,9 +42,7 @@ int main() {
 					p.y += dy*jmp;
 					pair<double, P> np{func(p), p};
 					if (np < cur) cur = np, imp = 1;
-				}
-			}
-		}
+				}}}
 
 		if (abs((cur.second - a).dist() - ra) < 1e-9 &&
 		    abs((cur.second - b).dist() - rb) < 1e-9) {

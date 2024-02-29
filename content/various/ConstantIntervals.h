@@ -21,8 +21,7 @@ void rec(int from, int to, F& f, G& g, int& i, T& p, T q) {
 		int mid = (from + to) >> 1;
 		rec(from, mid, f, g, i, p, f(mid));
 		rec(mid+1, to, f, g, i, p, q);
-	}
-}
+	}}
 template<class F, class G>
 void constantIntervals(int from, int to, F f, G g) {
 	if (to <= from) return;

@@ -14,8 +14,7 @@ struct Line {
         if (!s) return 0;
         ll x = rhs.m;
         return b - s->b < (s->m - m) * x;
-    }
-};
+    }};
 struct HullDynamic : public multiset<Line> { // will maintain upper hull for maximum
     bool bad(iterator y) {
         auto z = next(y);
@@ -37,8 +36,7 @@ struct HullDynamic : public multiset<Line> { // will maintain upper hull for max
     ll query(ll x) {
         auto l = *lower_bound((Line) { x, is_query });
         return l.m * x + l.b;
-    }
-};
+    }};
 }
 
 int test2() {
@@ -90,8 +88,7 @@ int main() {
 		else if (!mh.empty()) {
 			int x = ra() % 10 - 5;
 			assert(mh.query(x) == mh2.query(x));
-		}
-	}
+		}}
 	test2();
 	cout<<"Tests passed!"<<endl;
 }

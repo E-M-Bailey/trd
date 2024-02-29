@@ -18,8 +18,7 @@ vi eratosthenes(int LIM) {
 			if (!block[i]) pr.push_back((L + i) * 2 + 1);
 	}
 	return pr;
-}
-}
+}}
 #include "../../content/number-theory/FastEratosthenes.h"
 #include "../../content/number-theory/Eratosthenes.h"
 

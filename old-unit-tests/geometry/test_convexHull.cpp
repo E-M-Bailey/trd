@@ -79,7 +79,6 @@ public:
 
 	virtual int getCount() const {
 		return cases;
-	}
-};
+	}};
 
 KACTL_AUTOREGISTER_TEST(test_convexHull);

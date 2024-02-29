@@ -36,12 +36,10 @@ public:
 			if (u.size(3) != 2)
 				fail("The size of the set where 3 is should be 2");
 
-		}
-	}
+		}}
 
 	virtual int getCount() const {
 		return 1;
-	}
-};
+	}};
 
 KACTL_AUTOREGISTER_TEST(test_union_find);

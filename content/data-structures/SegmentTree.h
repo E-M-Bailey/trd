@@ -26,5 +26,4 @@ struct Tree {
 			if (e % 2) rb = f(s[--e], rb);
 		}
 		return f(ra, rb);
-	}
-};
+	}};

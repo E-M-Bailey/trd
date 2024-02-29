@@ -26,8 +26,7 @@ struct Quad {
 	P& F() { return r()->p; }
 	Q& r() { return rot->rot; }
 	Q prev() { return rot->o->rot; }
-	Q next() { return r()->prev(); }
-} *H;
+	Q next() { return r()->prev(); }} *H;
 
 bool circ(P p, P a, P b, P c) { // is p in the circumcircle?
 	lll p2 = p.dist2(), A = a.dist2()-p2,

@@ -28,7 +28,6 @@ class test_multinomial :
 
 		virtual int getCount() const {
 			return cases.size();
-		}
-};
+		}};
 
 KACTL_AUTOREGISTER_TEST(test_multinomial);

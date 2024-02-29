@@ -13,8 +13,7 @@ struct UF {
 		if (-v[a] < -v[b]) swap(a, b);
 		v[a] += v[b];
 		v[b] = a;
-	}
-};
+	}};
 
 bool hasEulerWalk(vector<vector<pii>>& ed, int start, bool undir, bool cycle) {
 	int n = sz(ed);
@@ -36,9 +35,7 @@ bool hasEulerWalk(vector<vector<pii>>& ed, int start, bool undir, bool cycle) {
 			if (nins[i] == sz(ed[i])) continue;
 			if (cycle) return false;
 			if (abs(nins[i] - sz(ed[i])) > 1) { return false; }
-			if (nins[i] < sz(ed[i]) && i != start) { return false; }
-		}
-	}
+			if (nins[i] < sz(ed[i]) && i != start) { return false; }}}
 	if (odd > !cycle) { return false; }
 	if (ed[start].empty() && anyEdges) { return false; }
 	UF uf(n);
@@ -116,14 +113,10 @@ int main() {
 						if (!seenEdge[eid]) {
 							seenEdge[eid] = 1;
 							goto ok;
-						}
-					}
+						}}
 					assert(0); // no usable edge there
 ok:
 					cur = x;
-				}
-			}
-		}
-	}
+				}}}}
 	cout << "Tests passed!" << endl;
 }

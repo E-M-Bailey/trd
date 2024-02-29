@@ -40,7 +40,6 @@ int main() {
 		else {
 			tr->set(i, j, x);
 			rep(k,i,j) v[k] = x;
-		}
-	}
+		}}
 	cout<<"Tests passed!"<<endl;
 }

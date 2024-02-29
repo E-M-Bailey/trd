@@ -20,8 +20,7 @@ ll det(vector<vector<ll>>& a) {
 					a[i][k] = (a[i][k] - a[j][k] * t) % mod;
 				swap(a[i], a[j]);
 				ans *= -1;
-			}
-		}
+			}}
 		ans = ans * a[i][i] % mod;
 		if (!ans) return 0;
 	}

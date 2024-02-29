@@ -32,5 +32,4 @@ struct FT2 {
 		for (; x; x &= x - 1)
 			sum += ft[x-1].query(ind(x-1, y));
 		return sum;
-	}
-};
+	}};

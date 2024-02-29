@@ -23,8 +23,7 @@ struct MCMF2 {
 	pair<ll, ll> maxflow(int s, int t) {
 		return min_cost_max_flow(g, s, t);
 	}
-	void setpi(int s) {}
-};
+	void setpi(int s) {}};
 
 // typedef MCMF2 MCMF;
 
@@ -67,8 +66,7 @@ ll MinCostMatching(const vector<vd>& cost, vi& L, vi& R) {
 			R[j] = i;
 			mated++;
 			break;
-		}
-	}
+		}}
 
 	for (; mated < n; mated++) { // until solution is feasible
 		int s = 0;
@@ -94,9 +92,7 @@ ll MinCostMatching(const vector<vd>& cost, vi& L, vi& R) {
 				if (dist[k] > new_dist) {
 					dist[k] = new_dist;
 					dad[k] = j;
-				}
-			}
-		}
+				}}}
 
 		/// update dual variables
 		rep(k,0,n) {
@@ -160,8 +156,7 @@ void testMatching() {
 		assert(pa.first == min(N, M));
 		assert(pa.second == v - 2 * pa.first);
 		::i = last;
-	}
-}
+	}}
 
 void testNeg() {
 	int ed[100][100];
@@ -181,8 +176,7 @@ void testNeg() {
 				int co = rand() % 11 - 3;
 				mcmf.addEdge(i, j, fl, co);
 				mcmf2.addEdge(i, j, fl, co);
-			}
-		}
+			}}
 		if (!mcmf.setpi(S))  // has negative loops
 			continue;
 		auto pa = mcmf.maxflow(S, T);

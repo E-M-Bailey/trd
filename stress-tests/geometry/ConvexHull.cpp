@@ -22,8 +22,7 @@ vi convexHull(const vector<P>& S) {
 	if (S[u[0]] == S[u[1]]) return {0};
 	l.insert(l.end(), u.rbegin()+1, u.rend()-1);
 	return l;
-}
-}
+}}
 
 int main() {
     const int SZ = 1e2;
@@ -36,7 +35,6 @@ int main() {
         assert(sz(res) == sz(res2));
         rep(i,0,sz(res2)) {
             assert(pts[res2[i]] == res[i]);
-        }
-    }
+        }}
     cout<<"Tests passed!"<<endl;
 }

@@ -16,8 +16,7 @@ struct bruteforce { // values in nodes
         pars[cur] = p;
         for (auto i: tree[cur]) {
             if (i != p) root(i, cur);
-        }
-    }
+        }}
     bruteforce(vector<vector<int>> _tree): tree(_tree), vals(sz(tree)), pars(sz(tree)) {
         root(0);
     }
@@ -65,8 +64,7 @@ struct bruteforce { // values in nodes
     }
     int querySubtree(int a) {
         return dfsSubtree(a, pars[a]);
-    }
-};
+    }};
 
 void testAgainstOld(int n, int iters, int queries) {
     for (int trees = 0; trees < iters; trees++) {
@@ -80,8 +78,7 @@ void testAgainstOld(int n, int iters, int queries) {
         for (int i = 0; i < sz(tree1); i++) {
             for (auto j : tree1[i]) {
                 tree2[i].push_back({j, 0});
-            }
-        }
+            }}
         HLD<false> hld(tree1);
         old::HLD hld2(tree2);
         hld.tree->set(0, n, 0);
@@ -95,10 +92,7 @@ void testAgainstOld(int n, int iters, int queries) {
                 int a = rand() % n;
                 int b = rand() % n;
                 assert(hld.queryPath(a, b) == hld2.query2(a, b).first);
-            }
-        }
-    }
-}
+            }}}}
 void testAgainstBrute(int n, int iters, int queries) {
     for (int trees = 0; trees < iters; trees++) {
         auto graph = genRandomTree(n);
@@ -127,11 +121,7 @@ void testAgainstBrute(int n, int iters, int queries) {
             } else if (rng == 2) {
                 int a = rand() % n;
                 assert(hld.querySubtree(a) == hld2.querySubtree(a));
-            }
-        }
-    }
-
-}
+            }}}}
 int main() {
     srand(2);
     testAgainstBrute(5, 1000, 10000);

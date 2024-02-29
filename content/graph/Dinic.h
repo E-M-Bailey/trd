@@ -30,8 +30,7 @@ struct Dinic {
 				if (ll p = dfs(e.to, t, min(f, e.c))) {
 					e.c -= p, adj[e.to][e.rev].c += p;
 					return p;
-				}
-		}
+				}}
 		return 0;
 	}
 	ll calc(int s, int t) {
@@ -49,5 +48,4 @@ struct Dinic {
 		} while (lvl[t]);
 		return flow;
 	}
-	bool leftOfMinCut(int a) { return lvl[a] != 0; }
-};
+	bool leftOfMinCut(int a) { return lvl[a] != 0; }};

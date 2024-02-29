@@ -25,8 +25,7 @@ void test(int N, int mxCost, int iters) {
             for (int j = 0; j < m; j++) {
                 cost[i][j] = randRange(-mxCost, mxCost);
                 mcmf.addEdge(i + 2, 2 + n + j, 1, cost[i][j]);
-            }
-        }
+            }}
         mcmf.setpi(s);
         auto maxflow = mcmf.maxflow(s, t);
         auto matching = hungarian(cost);
@@ -41,8 +40,7 @@ void test(int N, int mxCost, int iters) {
         }
         assert(matchSum == matching.first);
         return;
-    }
-}
+    }}
 signed main() {
     test(25, 5, 1000);
     test(100, 1000, 100);

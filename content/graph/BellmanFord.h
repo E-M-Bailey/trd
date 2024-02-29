@@ -27,10 +27,8 @@ void bellmanFord(vector<Node>& nodes, vector<Ed>& eds, int s) {
 		if (d < dest.dist) {
 			dest.prev = ed.a;
 			dest.dist = (i < lim-1 ? d : -inf);
-		}
-	}
+		}}
 	rep(i,0,lim) for (Ed e : eds) {
 		if (nodes[e.a].dist == -inf)
 			nodes[e.b].dist = -inf;
-	}
-}
+	}}

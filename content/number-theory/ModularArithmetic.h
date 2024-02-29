@@ -26,5 +26,4 @@ struct Mod {
 		if (!e) return Mod(1);
 		Mod r = *this ^ (e / 2); r = r * r;
 		return e&1 ? *this * r : r;
-	}
-};
+	}};

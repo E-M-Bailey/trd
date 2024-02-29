@@ -15,8 +15,7 @@ struct FlowEdge {
 	Flow c, f, cost;
 	Flow r() { return c - f; }
 	FlowEdge(int d, int b, Flow c, Flow cost = 0)
-		: dest(d), back(b), c(c), f(0), cost(cost) {}
-};
+		: dest(d), back(b), c(c), f(0), cost(cost) {}};
 
 template<class G>
 void flow_add_edge(G& g, int s, int t,
@@ -41,8 +40,7 @@ pair<Flow, Flow> aug(G &g, int s, int t) {
 					mindist[e.dest] = dist;
 					mark[e.dest] = e.back;
 					changed = true;
-				}
-			}
+				}}
 	if (mark[t] < 0) return make_pair(0, 0);
 	Flow inc = inf;
 	FlowEdge* e; int v = t;

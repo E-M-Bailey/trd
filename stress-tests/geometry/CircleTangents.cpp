@@ -21,9 +21,6 @@ signed main() {
                 for (auto l : tans) {
                     assert(abs(abs(lineDist(l.first, l.second, c1))-r1) < 1e-8);
                     assert(abs(abs(lineDist(l.first, l.second, c2))-r2) < 1e-8);
-                }
-            }
-        }
-    }
+                }}}}
     cout<<"Tests passed!"<<endl;
 }

@@ -89,8 +89,7 @@ int main() {
 				random_shuffle(all(r), [](int x) { return ra() % x; });
 				ts.atMostOne(r);
 				atm.push_back(r);
-			}
-		}
+			}}
 		assert(ts.solve());
 		int to = 0;
 		rep(i,0,N) to += (ts.values[i] == v[i]);
@@ -98,8 +97,7 @@ int main() {
 			int co = 0;
 			for(auto &x: r) co += (ts.values[max(x, ~x)] == (x >= 0));
 			assert(co <= 1);
-		}
-	}
+		}}
 	cout<<"Tests passed!"<<endl;
 	return 0;
 }

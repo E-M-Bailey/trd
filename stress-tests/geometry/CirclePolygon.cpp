@@ -29,8 +29,7 @@ long double circlePoly(P c, long double r, vector<P> poly) {
         area += areaCT(a, b, r) * sgn(a.cross(b));
     }
     return area;
-}
-}
+}}
 
 signed main() {
     ios::sync_with_stdio(0);
@@ -63,7 +62,6 @@ signed main() {
         if (abs(res1 - res2) > 1e-8) {
             cout<<abs(res1-res2)<<' '<<res1<<' '<<res2<<endl;
             assert(false);
-        }
-    }
+        }}
     cout<<"Tests passed!"<<endl;
 }

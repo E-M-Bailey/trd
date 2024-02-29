@@ -60,8 +60,7 @@ double closestpair(It begin, It end, It &i1, It &i2 ) {
 	sort(xa.begin(), xa.end(), it_less<It>);
 	sort(ya.begin(), ya.end(), y_it_less<It>);
 	return cp_sub(ya.begin(), ya.end(), xa.begin(), i1, i2);
-}
-}
+}}
 
 int main() {
 	// Compare against the old code
@@ -95,8 +94,7 @@ int main() {
 		if (mode == 3 && oldDist != foundDist) {
 			cerr << "failed at " << it << endl;
 			return 1;
-		}
-	}
+		}}
 	// cout << sum << endl;
 
 	// Compare against bruteforce
@@ -121,7 +119,6 @@ int main() {
 		if (minDist != foundDist) {
 			cerr << "failed at " << it << endl;
 			return 1;
-		}
-	}
+		}}
 	cout<<"Tests passed!"<<endl;
 }

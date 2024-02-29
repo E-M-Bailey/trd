@@ -31,8 +31,7 @@ bool insidePolygon(It begin, It end, const P& p,
 				((*j-*i).cross(p-*i) > 0) == (i->y <= p.y));
 	}
 	return n&1; //inside if odd number of intersections
-}
-}
+}}
 typedef Point<double> P;
 bool eq(P a, P b) {
     return (a-b).dist()<EPS;
@@ -49,10 +48,7 @@ void test(int numPts, int range) {
             P p(rand()%range, rand()%range);
             assert(inPolygon(poly, p, true) == old::insidePolygon(all(poly), p, true));
             assert(inPolygon(poly, p, false) == old::insidePolygon(all(poly), p, false));
-        }
-    }
-
-}
+        }}}
 int main() {
     test(20,5);
     test(1001,100);

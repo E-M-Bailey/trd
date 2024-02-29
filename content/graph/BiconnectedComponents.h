@@ -41,9 +41,7 @@ int dfs(int at, int par, F& f) {
 				st.resize(si);
 			}
 			else if (up < me) st.push_back(e);
-			else { /* e is a bridge */ }
-		}
-	}
+			else { /* e is a bridge */ }}}
 	return top;
 }
 

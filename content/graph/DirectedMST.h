@@ -24,8 +24,7 @@ struct Node { /// lazy skew heap node
 		if (r) r->delta += delta;
 		delta = 0;
 	}
-	Edge top() { prop(); return key; }
-};
+	Edge top() { prop(); return key; }};
 Node *merge(Node *a, Node *b) {
 	if (!a || !b) return a ?: b;
 	a->prop(), b->prop();
@@ -59,8 +58,7 @@ pair<ll, vi> dmst(int n, int r, vector<Edge>& g) {
 				while (uf.join(u, w));
 				u = uf.find(u), heap[u] = cyc, seen[u] = -1;
 				cycs.push_front({u, time, {&Q[qi], &Q[end]}});
-			}
-		}
+			}}
 		rep(i,0,qi) in[uf.find(Q[i].b)] = Q[i];
 	}
 

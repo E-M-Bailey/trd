@@ -32,15 +32,13 @@ template <bool VALS_EDGES> struct HLD {
 			dfsSz(u);
 			siz[v] += siz[u];
 			if (siz[u] > siz[adj[v][0]]) swap(u, adj[v][0]);
-		}
-	}
+		}}
 	void dfsHld(int v) {
 		pos[v] = tim++;
 		for (int u : adj[v]) {
 			rt[u] = (u == adj[v][0] ? rt[v] : u);
 			dfsHld(u);
-		}
-	}
+		}}
 	template <class B> void process(int u, int v, B op) {
 		for (; rt[u] != rt[v]; v = par[rt[v]]) {
 			if (depth[rt[u]] > depth[rt[v]]) swap(u, v);
@@ -61,5 +59,4 @@ template <bool VALS_EDGES> struct HLD {
 	}
 	int querySubtree(int v) { // modifySubtree is similar
 		return tree->query(pos[v] + VALS_EDGES, pos[v] + siz[v]);
-	}
-};
+	}};

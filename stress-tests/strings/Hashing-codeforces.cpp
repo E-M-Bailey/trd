@@ -38,8 +38,7 @@ int main() {
 			assert(sz(ve) == n-le+1);
 			rep(i,0,n-le+1) {
 				assert((ull) ve[i] == (ull) hi.hashInterval(i, i + le));
-			}
-		}
+			}}
 
 		// No collisions
 		assert(sz(strs) == sz(hashes));

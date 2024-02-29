@@ -123,9 +123,7 @@ void UnitTestManager::runTest(UnitTestWrapper* unitTestWrapper)
 			fprintf(stderr, "FAILED\n");
 			fprintf(stderr, "\tUnknown exception caught!\n");
 			fflush(stderr);
-		}
-	}
-}
+		}}}
 
 int main(int argc, char** argv)
 {

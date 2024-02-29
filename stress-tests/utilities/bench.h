@@ -18,5 +18,4 @@ struct timeit {
         auto end = chrono::high_resolution_clock::now();
         auto duration = chrono::duration_cast<chrono::milliseconds>(end - begin).count();
         cerr << duration << "ms elapsed [" << label << "]" << endl;
-    }
-};
+    }};

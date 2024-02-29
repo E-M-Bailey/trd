@@ -9,9 +9,7 @@ template <class F> void gen(string &s, int at, int alpha, F f) {
         rep(i, 0, alpha) {
             s[at] = (char)('a' + i);
             gen(s, at + 1, alpha, f);
-        }
-    }
-}
+        }}}
 
 void test(const string &s) {
     int n = sz(s);

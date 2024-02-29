@@ -25,8 +25,7 @@ const db eps = 1e-8;
 
 struct pt {
     db x, y;
-    pt(db x = 0, db y = 0) : x(x), y(y) {}
-};
+    pt(db x = 0, db y = 0) : x(x), y(y) {}};
 
 inline int sgn(db x) { return (x > eps) - (x < -eps); }
 
@@ -54,16 +53,13 @@ db polygon_union(vector<pt> poly[], int n) {
                         if (!sc && !sd) {
                             if (sgn(scal(B - A, D - C)) > 0 && i > j) {
                                 segs.emplace_back(ratio(A, B, C), 1), segs.emplace_back(ratio(A, B, D), -1);
-                            }
-                        } else {
+                            }} else {
                             db sa = vect(D - C, A - C), sb = vect(D - C, B - C);
                             if (sc >= 0 && sd < 0)
                                 segs.emplace_back(sa / (sa - sb), 1);
                             else if (sc < 0 && sd >= 0)
                                 segs.emplace_back(sa / (sa - sb), -1);
-                        }
-                    }
-                }
+                        }}}
             sort(segs.begin(), segs.end());
             db pre = min(max(segs[0].first, 0.0), 1.0), now, sum = 0;
             int cnt = segs[0].second;
@@ -75,11 +71,9 @@ db polygon_union(vector<pt> poly[], int n) {
                 pre = now;
             }
             ret += vect(A, B) * sum;
-        }
-    }
+        }}
     return ret / 2;
-}
-} // namespace blackhorse
+}} // namespace blackhorse
 
 namespace approximate {
 #include "../../content/geometry/InsidePolygon.h"
@@ -93,13 +87,9 @@ double polygonUnion(vector<vector<P>> &polygons, int lim) {
                 if (inPolygon(i, P(x, y))) {
                     cnt++;
                     break;
-                }
-            }
-        }
-    }
+                }}}}
     return lim * lim * 4 * cnt / double(total);
-}
-} // namespace approximate
+}} // namespace approximate
 
 namespace lovelive {
 #define re real
@@ -134,16 +124,14 @@ db polygon_union(vector<cpoi> py[], int n) {
                             if (sgn(re(conj(b - a) * (d - c))) > 0 && i > j) {
                                 segs.pb({ratio(a, b, c), +1});
                                 segs.pb({ratio(a, b, d), -1});
-                            }
-                        } else {
+                            }} else {
                             db sa = im(conj(d - c) * (a - c));
                             db sb = im(conj(d - c) * (b - c));
                             if (sc >= 0 && sd < 0)
                                 segs.pb({sa / (sa - sb), 1});
                             else if (sc < 0 && sd >= 0)
                                 segs.pb({sa / (sa - sb), -1});
-                        }
-                    }
+                        }}
             sort(segs.begin(), segs.end());
             db pre = min(max(segs[0].fir, 0.0), 1.0);
             db cur, sum = 0;
@@ -159,8 +147,7 @@ db polygon_union(vector<cpoi> py[], int n) {
         }
     ret = abs(ret) * 0.5;
     return ret;
-}
-} // namespace lovelive
+}} // namespace lovelive
 
 P randPt(int lim) { return P(randRange(-lim, lim), randRange(-lim, lim)); }
 
@@ -179,8 +166,7 @@ void testRandom(int n, int numPts = 10, int lim = 5, bool brute = false) {
         polygons.push_back(genPolygon(pts));
         if (polygonArea2(polygons.back()) < 0) {
             reverse(all(polygons.back()));
-        }
-    }
+        }}
     auto val1 = polyUnion(polygons);
     vector<vector<blackhorse::pt>> polygons2;
     for (auto i : polygons) {
@@ -206,8 +192,7 @@ void testRandom(int n, int numPts = 10, int lim = 5, bool brute = false) {
             cout << endl;
         }
         abort();
-    }
-}
+    }}
 
 int main() {
     // int s = (int)time(0);

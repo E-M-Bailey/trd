@@ -39,8 +39,7 @@ struct Node {
 		else {
 			push(), l->set(L, R, x), r->set(L, R, x);
 			val = max(l->val, r->val);
-		}
-	}
+		}}
 	void add(int L, int R, int x) {
 		if (R <= lo || hi <= L) return;
 		if (L <= lo && hi <= R) {
@@ -51,8 +50,7 @@ struct Node {
 		else {
 			push(), l->add(L, R, x), r->add(L, R, x);
 			val = max(l->val, r->val);
-		}
-	}
+		}}
 	void push() {
 		if (!l) {
 			int mid = lo + (hi - lo)/2;
@@ -62,5 +60,4 @@ struct Node {
 			l->set(lo,hi,mset), r->set(lo,hi,mset), mset = inf;
 		else if (madd)
 			l->add(lo,hi,madd), r->add(lo,hi,madd), madd = 0;
-	}
-};
+	}};

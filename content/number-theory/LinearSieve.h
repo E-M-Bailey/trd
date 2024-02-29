@@ -27,7 +27,4 @@ void sieve(int n) {
 				F[x] = F[i] * P[j]; // f(ip), p = i's min pf (custom)
 				K[x] += K[i];
 				break;
-			}
-		}
-	}
-}
+			}}}}

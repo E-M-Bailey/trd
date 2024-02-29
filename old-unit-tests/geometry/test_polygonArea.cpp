@@ -29,7 +29,6 @@ public:
 
 	virtual int getCount() const {
 		return 1;
-	}
-};
+	}};
 
 KACTL_AUTOREGISTER_TEST(test_polygonArea);

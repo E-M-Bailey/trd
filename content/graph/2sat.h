@@ -71,5 +71,4 @@ struct TwoSat {
 		rep(i,0,2*N) if (!comp[i]) dfs(i);
 		rep(i,0,N) if (comp[2*i] == comp[2*i+1]) return 0;
 		return 1;
-	}
-};
+	}};

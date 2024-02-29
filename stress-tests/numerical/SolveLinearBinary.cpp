@@ -49,9 +49,7 @@ void rec(int i, int j, vector<bs>& A, int m, F f) {
 		rep(v,0,2) {
 			A[i][j] = v;
 			rec(i, j+1, A, m, f);
-		}
-	}
-}
+		}}}
 
 template<class F>
 void rec2(int i, bs& A, int m, F f) {
@@ -60,9 +58,7 @@ void rec2(int i, bs& A, int m, F f) {
 		rep(v,0,2) {
 			A[i] = v;
 			rec2(i+1, A, m, f);
-		}
-	}
-}
+		}}}
 
 int main() {
 	int ct = 0;

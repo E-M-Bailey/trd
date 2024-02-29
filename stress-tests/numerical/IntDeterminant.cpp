@@ -13,8 +13,7 @@ ll det(vvll& a) { // integer determinant
 					a[i][k] = (a[i][k] - a[j][k] * t) % mod;
 				swap(a[i], a[j]);
 				ans *= -1;
-			}
-		}
+			}}
 		if (!a[i][i]) return 0;
 		ans = ans * a[i][i] % mod;
 	}
@@ -31,8 +30,7 @@ ll idet(vvll& a) { // integer determinant
 				rep(k,i,n) a[i][k] -= a[j][k] * t;
 				swap(a[i], a[j]);
 				ans *= -1;
-			}
-		}
+			}}
 		if (!a[i][i]) return 0;
 		ans *= a[i][i];
 	}
@@ -50,8 +48,7 @@ double det(vector<vector<double>>& a) {
 		rep(j,i+1,n) {
 			double v = a[j][i] / a[i][i];
 			if (v != 0) rep(k,i+1,n) a[j][k] -= v * a[i][k];
-		}
-	}
+		}}
 	return res;
 }
 
@@ -67,9 +64,7 @@ void rec(int i, int j, vvll& A, F f) {
 		rep(v,0,mod) {
 			A[i][j] = v;
 			rec(i, j+1, A, f);
-		}
-	}
-}
+		}}}
 
 template<class F>
 void rec2(int i, vector<ll>& A, F f) {
@@ -78,9 +73,7 @@ void rec2(int i, vector<ll>& A, F f) {
 		rep(v,0,mod) {
 			A[i] = v;
 			rec2(i+1, A, f);
-		}
-	}
-}
+		}}}
 
 int main() {
 	rep(n,0,4) {
@@ -100,8 +93,7 @@ int main() {
 				}
 				cout << a << ' ' << b << endl;
 				assert(a == b);
-			}
-		});
+			}});
 	}
 	cout<<"Tests passed!"<<endl;
 }

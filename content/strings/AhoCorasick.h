@@ -22,8 +22,7 @@ struct AhoCorasick {
 	struct Node {
 		// (nmatches is optional)
 		int back, next[alpha], start = -1, end = -1, nmatches = 0;
-		Node(int v) { memset(next, v, sizeof(next)); }
-	};
+		Node(int v) { memset(next, v, sizeof(next)); }};
 	vector<Node> N;
 	vi backp;
 	void insert(string& s, int j) {
@@ -56,10 +55,7 @@ struct AhoCorasick {
 						= N[y].end;
 					N[ed].nmatches += N[y].nmatches;
 					q.push(ed);
-				}
-			}
-		}
-	}
+				}}}}
 	vi find(string word) {
 		int n = 0;
 		vi res; // ll count = 0;
@@ -78,8 +74,6 @@ struct AhoCorasick {
 			while (ind != -1) {
 				res[i - sz(pat[ind]) + 1].push_back(ind);
 				ind = backp[ind];
-			}
-		}
+			}}
 		return res;
-	}
-};
+	}};

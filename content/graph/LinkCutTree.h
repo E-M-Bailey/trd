@@ -47,13 +47,11 @@ struct Node { // Splay tree. Root's pp contains tree's parent.
 			int c1 = up(), c2 = p->up();
 			if (c2 == -1) p->rot(c1, 2);
 			else p->p->rot(c2, c1 != c2);
-		}
-	}
+		}}
 	Node* first() { /// Return the min element of the subtree rooted at this, splayed to the top.
 		pushFlip();
 		return c[0] ? c[0]->first() : (splay(), this);
-	}
-};
+	}};
 
 struct LinkCut {
 	vector<Node> node;
@@ -72,8 +70,7 @@ struct LinkCut {
 		else {
 			x->c[0] = top->p = 0;
 			x->fix();
-		}
-	}
+		}}
 	bool connected(int u, int v) { // are u, v in the same tree?
 		Node* nu = access(&node[u])->first();
 		return nu == access(&node[v])->first();
@@ -87,8 +84,7 @@ struct LinkCut {
 			u->c[0]->pp = u;
 			u->c[0] = 0;
 			u->fix();
-		}
-	}
+		}}
 	Node* access(Node* u) { /// Move u to root aux tree. Return the root of the root aux tree.
 		u->splay();
 		while (Node* pp = u->pp) {
@@ -98,5 +94,4 @@ struct LinkCut {
 			pp->c[1] = u; pp->fix(); u = pp;
 		}
 		return u;
-	}
-};
+	}};

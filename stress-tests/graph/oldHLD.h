@@ -27,8 +27,7 @@ struct HLD {
 			c.tree = {sz(c.nodes), 0};
 			for (int ni : c.nodes)
 				c.tree.update(V[ni].pos, V[ni].val);
-		}
-	}
+		}}
 
 	void update(int node, T val) {
 		Node& n = V[node]; n.val = val;
@@ -60,9 +59,7 @@ struct HLD {
 					f(ans, n1.pos ? c.tree.query(n1.pos, sz(c.nodes))
 					              : c.tree.s[1]);
 					i1 = c.par;
-				}
-			}
-		}
+				}}}
 		return make_pair(ans, i1);
 	}
 
@@ -92,5 +89,4 @@ struct HLD {
 		C[ch].par = at;
 		C[ch].nodes.push_back(nod);
 		return pii(sum, ch);
-	}
-};
+	}};

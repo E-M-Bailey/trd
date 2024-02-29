@@ -41,8 +41,7 @@ void test(int N, int mxFlow, int iters) {
             for (auto i : adj[cur]) {
                 if (i[0] != p)
                     dfs(start, i[0], cur, min(mn, i[1]));
-            }
-        });
+            }});
         dfs(0, 0, -1, INT_MAX);
 
         // Check that the lightest edge agrees with GlobalMinCut.
@@ -67,9 +66,7 @@ void test(int N, int mxFlow, int iters) {
                 cutw += mat[i][j];
             }
             assert(pa.first == cutw);
-        }
-    }
-}
+        }}}
 signed main() {
     test(25, 5, 200);
     test(100, 1000, 5);

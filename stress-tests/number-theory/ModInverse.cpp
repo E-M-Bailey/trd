@@ -19,8 +19,7 @@ int main() {
 		#include "../../content/number-theory/ModInverse.h"
 		for (int i=1; i<it; i++){
 			assert(inv[i] == modpow(i, mod-2, mod));
-		}
-	}
+		}}
 	cout<<"Tests pass!"<<endl;
 }
 

@@ -21,5 +21,4 @@ template<class T> struct small {
 		buf_ind &= 0 - alignof(T);
 		return (T*)(buf + buf_ind);
 	}
-	void deallocate(T*, size_t) {}
-};
+	void deallocate(T*, size_t) {}};

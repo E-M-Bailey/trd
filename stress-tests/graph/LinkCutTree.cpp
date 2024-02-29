@@ -33,9 +33,6 @@ int main() {
 					edges.emplace_back(a, b);
 				} else {
 					assert(lc.connected(a, b) == c);
-				}
-			}
-		}
-	}
+				}}}}
 	cout<<"Tests passed!"<<endl;
 }

@@ -63,8 +63,7 @@ struct LPSolver {
 			}
 			if (r == -1) return false;
 			pivot(r, s);
-		}
-	}
+		}}
 
 	T solve(vd &x) {
 		int r = 0;
@@ -76,10 +75,8 @@ struct LPSolver {
 				int s = 0;
 				rep(j,1,n+1) ltj(D[i]);
 				pivot(i, s);
-			}
-		}
+			}}
 		bool ok = simplex(1); x = vd(n);
 		rep(i,0,m) if (B[i] < n) x[B[i]] = D[i][n+1];
 		return ok ? D[m][n+1] : inf;
-	}
-};
+	}};

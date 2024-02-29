@@ -45,8 +45,7 @@ vector<T> tridiagonal(vector<T> diag, const vector<T>& super,
 		} else {
 			diag[i+1] -= super[i]*sub[i]/diag[i];
 			b[i+1] -= b[i]*sub[i]/diag[i];
-		}
-	}
+		}}
 	for (int i = n; i--;) {
 		if (tr[i]) {
 			swap(b[i], b[i-1]);
@@ -55,7 +54,6 @@ vector<T> tridiagonal(vector<T> diag, const vector<T>& super,
 		} else {
 			b[i] /= diag[i];
 			if (i) b[i-1] -= b[i]*super[i-1];
-		}
-	}
+		}}
 	return b;
 }

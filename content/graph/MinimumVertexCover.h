@@ -24,8 +24,7 @@ vi cover(vector<vi>& g, int n, int m) {
 		for (int e : g[i]) if (!seen[e] && match[e] != -1) {
 			seen[e] = true;
 			q.push_back(match[e]);
-		}
-	}
+		}}
 	rep(i,0,n) if (!lfound[i]) cover.push_back(i);
 	rep(i,0,m) if (seen[i]) cover.push_back(n+i);
 	assert(sz(cover) == res);

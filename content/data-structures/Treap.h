@@ -21,8 +21,7 @@ int cnt(Node* n) { return n ? n->c : 0; }
 void Node::recalc() { c = cnt(l) + cnt(r) + 1; }
 
 template<class F> void each(Node* n, F f) {
-	if (n) { each(n->l, f); f(n->val); each(n->r, f); }
-}
+	if (n) { each(n->l, f); f(n->val); each(n->r, f); }}
 
 pair<Node*, Node*> split(Node* n, int k) {
 	if (!n) return {};
@@ -36,8 +35,7 @@ pair<Node*, Node*> split(Node* n, int k) {
 		n->r = pa.first;
 		n->recalc();
 		return {n, pa.second};
-	}
-}
+	}}
 
 Node* merge(Node* l, Node* r) {
 	if (!l) return r;
@@ -50,8 +48,7 @@ Node* merge(Node* l, Node* r) {
 		r->l = merge(l, r->l);
 		r->recalc();
 		return r;
-	}
-}
+	}}
 
 Node* ins(Node* t, Node* n, int pos) {
 	auto pa = split(t, pos);

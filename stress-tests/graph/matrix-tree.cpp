@@ -10,8 +10,7 @@ ll det(vector<vector<ll>>& a) {
 					a[i][k] = (a[i][k] - a[j][k] * t);
 				swap(a[i], a[j]);
 				ans *= -1;
-			}
-		}
+			}}
 		ans = ans * a[i][i];
 		if (!ans) return 0;
 	}
@@ -35,8 +34,7 @@ ll rec(vector<vi>& ed, int active, int finished) {
 			if (bi & (1 << i)) {
 				if (edto & (1 << ed[chosen][i])) goto fail;
 				edto |= 1 << ed[chosen][i];
-			}
-		}
+			}}
 		if (active & edto) continue;
 		res += rec(ed, active | edto, finished | (1 << chosen));
 fail:;

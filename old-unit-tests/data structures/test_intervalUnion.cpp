@@ -43,12 +43,10 @@ public:
 			r.push_back(pii(1,10));
 			r.push_back(pii(11,12));
 			test(v,r);
-		}
-	}
+		}}
 
 	virtual int getCount() const {
 		return 2;
-	}
-};
+	}};
 
 KACTL_AUTOREGISTER_TEST(test_intervalUnion);

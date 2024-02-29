@@ -38,7 +38,6 @@ class test_HopcorftKarp :
 
 		virtual int getCount() const {
 			return cases;
-		}
-};
+		}};
 
 KACTL_AUTOREGISTER_TEST(test_HopcorftKarp);

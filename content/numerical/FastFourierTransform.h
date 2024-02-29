@@ -40,8 +40,7 @@ void fft(vector<C>& a) {
 			C z(x[0]*y[0] - x[1]*y[1], x[0]*y[1] + x[1]*y[0]);           /// exclude-line
 			a[i + j + k] = a[i + j] - z;
 			a[i + j] += z;
-		}
-}
+		}}
 vd conv(const vd& a, const vd& b) {
 	if (a.empty() || b.empty()) return {};
 	vd res(sz(a) + sz(b) - 1);

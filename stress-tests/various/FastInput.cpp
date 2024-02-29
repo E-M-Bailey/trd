@@ -11,8 +11,7 @@ struct GC {
 			be = fread(buf, 1, sizeof(buf), stdin);
 		}
 		return buf[bc++]; // returns 0 on EOF
-	}
-} gc;
+	}} gc;
 int readInt() {
 	int a, c;
 	while ((a = gc()) < 40);
@@ -47,9 +46,7 @@ void test(const string& s, vi ints = {}) {
 				cerr << "On input " << s << ", read " << y << " but expected " << x << endl;
 			}
 			assert(x == y);
-		}
-	}
-}
+		}}}
 
 int main() {
 	// Unit test, not stress test, but oh well.

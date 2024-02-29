@@ -14,8 +14,7 @@ void fastCliques(vector<B>& eds, F f) {
 		R[i] = P[i] = 0; X[i] = 1;
 		rep(k,0,sz(eds)) if (eds[i][k]) deg[k]--;
 		deg[i] = 1000000;
-	}
-}
+	}}
 
 int main1() {
 	rep(n,1,11) rep(m,0,200) {

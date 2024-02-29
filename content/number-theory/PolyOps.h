@@ -63,11 +63,9 @@ template<int m> struct mnt {
 			if (z * z == *this) return z;
 			struct lin {
 				mnt a = 0, b = 0;
-				lin operator* (lin t) { return { a * t.a + b * t.b * y, a * t.b + b * t.a }; }
-			} x{z, 1}; // z + x
+				lin operator* (lin t) { return { a * t.a + b * t.b * y, a * t.b + b * t.a }; }} x{z, 1}; // z + x
 			if ((x = bpow(x, (m - 1) / 2)).b.r) return x.b.inv();
-		}
-	}
+		}}
 	mnt(ll rr = 0) : r(rr %m) { r += m * (r < 0); }
 	mnt operator-() { return m - r; }
 	mnt inv() { return bpow(*this, m - 2); }
@@ -117,8 +115,7 @@ struct point {
 	point operator +=(const point &t) { x += t.x, y += t.y; return *this; }
 	point operator +(const point &t) const { return point(*this) += t; }
 	point operator -(const point &t) const { return { x - t.x, y - t.y }; }
-	point operator *(const point &t) const { return { x * t.x - y * t.y, x * t.y + y * t.x }; }
-};*/
+	point operator *(const point &t) const { return { x * t.x - y * t.y, x * t.y + y * t.x }; }};*/
 
 point w[maxn]; // w[2^n + k] = exp(pi * k / (2^n))
 int bitr[maxn];// b[2^n + k] = bitreverse(k)
@@ -137,8 +134,7 @@ void fft(auto &a, int n) {
 	for (int i = 1; i < n; i *= 2) srep(j, 0, n, 2 * i) rep(k, j, j + i) {
 		point t = a[k + i] * w[i + k - j];
 		a[k + i] = a[k] - t; a[k] += t;
-	}
-}
+	}}
 /* TODO remove?
 void mul_slow(auto &a, auto &b) {
 	int n = sz(a), m = sz(b);
@@ -147,8 +143,7 @@ void mul_slow(auto &a, auto &b) {
 	rrep(k, 0, n + m - 1) {
 		a[k] *= b[0];
 		rep(j, max(k - n + 1, 1), min(k + 1, m)) a[k] += a[k - j] * b[j];
-	}
-}*/
+	}}*/
 const int spl = 1 << 15;
 template<int m> struct dft {
 	vector<point> A;
@@ -170,11 +165,9 @@ template<int m> struct dft {
 				mnt<m> A1 = llround(C[i].imag() / t + D[i].imag() / t);
 				mnt<m> A2 = llround(D[i].real() / t);
 				ans[i] = A0 + A1 * spl - A2 * spl * spl;
-			}
-		} return ans;
+			}} return ans;
 	}
-	point &operator [](int i) { return A[i]; }
-};
+	point &operator [](int i) { return A[i]; }};
 size_t com_size(auto as, auto bs) {
 	if (!as || !bs) return 0;
 	auto n = as + bs - 1;
@@ -253,8 +246,7 @@ template<class T> struct poly {
 			if (res.back() != T(0)) {
 				for (size_t i = 0; i < b.a.size(); i++) {
 					A[A.size() - i - 1] -= res.back() * b.a[b.a.size() - i - 1];
-				}
-			}
+				}}
 			A.pop_back();
 		}
 		std::reverse(begin(res), end(res));
@@ -305,15 +297,13 @@ template<class T> struct poly {
 
 		auto apply(poly A, poly B) {
 			return make_pair(a * A + b * B, c * A + d * B);
-		}
-	};
+		}};
 
 	template<typename Q>
 	static void concat(vector<Q> &a, vector<Q> const &b) {
 		for (auto it : b) {
 			a.push_back(it);
-		}
-	}
+		}}
 
 	// finds a transform that changes A/B to A'/B' such that
 	// deg B' is at least 2 times less than deg A
@@ -352,8 +342,7 @@ template<class T> struct poly {
 				ak.push_back(a);
 				trs.emplace_back(a);
 				tie(A, B) = make_pair(B, R);
-			}
-		}
+			}}
 		trs.emplace_back(T(1), T(0), T(0), T(1));
 		while (trs.size() >= 2) {
 			trs[trs.size() - 2] = trs[trs.size() - 2] * trs[trs.size() - 1];
@@ -381,8 +370,7 @@ template<class T> struct poly {
 			tie(Q1, Q2) = make_tuple(Q2, Q1 + a * Q2);
 			if (R2.deg() < Q2.deg()) {
 				return Q2 / Q2.lead();
-			}
-		}
+			}}
 		assert(0);
 	}
 
@@ -399,11 +387,9 @@ template<class T> struct poly {
 				c += L[i].a.size();
 				if (2 * c > s) {
 					return convergent(L, L + i) * convergent(L + i, R);
-				}
-			}
+				}}
 			assert(0);
-		}
-	}
+		}}
 
 	poly min_rec(int d) const {
 		if (d < magic) {
@@ -422,8 +408,7 @@ template<class T> struct poly {
 			if (dr < dp) {
 				auto ans = convergent(begin(a), begin(a) + i + 1);
 				return ans.a / ans.a.lead();
-			}
-		}
+			}}
 		auto ans = convergent(begin(a), end(a));
 		return ans.a / ans.a.lead();
 	}
@@ -444,8 +429,7 @@ template<class T> struct poly {
 			return nullopt;
 		} else {
 			return (k ? -Q1 : Q1) / R1[0];
-		}
-	}
+		}}
 
 	optional<poly> inv_mod(poly const &t) const {
 		assert(!t.is_zero());
@@ -591,8 +575,7 @@ template<class T> struct poly {
 			auto t = pow(k / 2, n);
 			t *= t;
 			return (k % 2 ? *this * t : t).mod_xk(n);
-		}
-	}
+		}}
 
 	// Do not compute inverse from scratch
 	poly powmod_hint(int64_t k, poly const &md, poly const &mdinv) {
@@ -605,8 +588,7 @@ template<class T> struct poly {
 				t = (t * *this).divmod_hint(md, mdinv).second;
 			}
 			return t;
-		}
-	}
+		}}
 
 	poly circular_closure(size_t m) const {
 		if (deg() == -1) {
@@ -634,8 +616,7 @@ template<class T> struct poly {
 				t = mul_circular(t, *this, m);
 			}
 			return t;
-		}
-	}
+		}}
 
 	poly powmod(int64_t k, poly const &md) {
 		int d = md.deg();
@@ -786,8 +767,7 @@ template<class T> struct poly {
 			auto B = (*this % tree[2 * v + 1]).eval(tree, 2 * v + 1, m, r);
 			A.insert(end(A), begin(B), end(B));
 			return A;
-		}
-	}
+		}}
 
 	vector<T> eval(vector<T> x) { // evaluate polynomial in (x1, ..., xn)
 		int n = x.size();
@@ -808,8 +788,7 @@ template<class T> struct poly {
 			auto A = (*this % tree[2 * v]).inter(tree, 2 * v, l, m, ly, my);
 			auto B = (*this % tree[2 * v + 1]).inter(tree, 2 * v + 1, m, r, my, ry);
 			return A * tree[2 * v + 1] + B * tree[2 * v];
-		}
-	}
+		}}
 
 	static auto resultant(poly a, poly b) { // computes resultant of a and b
 		if (b.is_zero()) {
@@ -823,8 +802,7 @@ template<class T> struct poly {
 			auto mul = bpow(b.lead(), pw) * T((b.deg() & a.deg() & 1) ? -1 : 1);
 			auto ans = resultant(b, a);
 			return ans * mul;
-		}
-	}
+		}}
 
 	static poly build(vector<poly> &res, int v, auto L, auto R) { // builds evaluation tree for (x-a1)(x-a2)...(x-an)
 		if (R - L == 1) {
@@ -832,8 +810,7 @@ template<class T> struct poly {
 		} else {
 			auto M = L + (R - L) / 2;
 			return res[v] = build(res, 2 * v, L, M) * build(res, 2 * v + 1, M, R);
-		}
-	}
+		}}
 
 	static auto inter(vector<T> x, vector<T> y) { // interpolates minimum polynomial from (xi, yi) pairs
 		int n = x.size();
@@ -1013,12 +990,10 @@ template<class T> struct poly {
 			r--;
 			if (r >= 0) {
 				AB0 = ((AB0 * Bd).integr() + A[r] * fact<T>(r)).mod_xk(n);
-			}
-		}
+			}}
 
 		return ans;
-	}
-};
+	}};
 
 static auto operator * (const auto &a, const poly<auto> &b) {
 	return b * a;
@@ -1045,5 +1020,4 @@ signed main() {
 	t = 1;// cin >> t;
 	while (t--) {
 		solve();
-	}
-}
+	}}

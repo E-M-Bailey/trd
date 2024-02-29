@@ -36,12 +36,7 @@ void compare() {
 					if (a != b) {
 						cout << "differ! " << to << ' ' << c << ' ' << k << ' ' << m << ": " << a << " vs " << b << endl;
 						assert(false);
-					}
-				}
-			}
-		}
-	}
-}
+					}}}}}}
 
 void compare2() {
 	rep(to,0,30) {
@@ -53,12 +48,7 @@ void compare2() {
 					if (a != b) {
 						cout << "differ! " << to << ' ' << c << ' ' << k << ' ' << m << ": " << a << " vs " << b << endl;
 						assert(false);
-					}
-				}
-			}
-		}
-	}
-}
+					}}}}}}
 
 int main() {
 	compare(); compare2();

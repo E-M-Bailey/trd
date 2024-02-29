@@ -30,5 +30,4 @@ struct RollbackUF {
 		st.push_back({b, e[b]});
 		e[a] += e[b]; e[b] = a;
 		return true;
-	}
-};
+	}};

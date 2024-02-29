@@ -14,7 +14,6 @@ int main() {
 			int n = 1 << 29;
 			rep(k,i,j) n = min(n, v[k]);
 			assert(n == m);
-		}
-	}
+		}}
 	cout<<"Tests passed!"<<endl;
 }

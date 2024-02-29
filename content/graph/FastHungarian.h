@@ -29,8 +29,7 @@ struct Hungarian {
 			T m = INF;
 			rep(w, 0, n) m = min(m, C[w][j]);
 			rep(w, 0, n) C[w][j] -= m;
-		}
-	}
+		}}
 	void init() {
 		rep(j, 0, n) lj[j] = INF;
 		rep(w, 0, n) rep(j, 0, n) lj[j] = min(lj[j], C[w][j]);
@@ -39,16 +38,14 @@ struct Hungarian {
 		rep(w, 0, n) rep(j, 0, n)
 			if (mw[w] < 0 && mj[j] < 0 && abs(C[w][j] - lw[w] - lj[j]) <= EPS) {
 				mw[w] = j; mj[j] = w;
-			}
-	}
+			}}
 	int next() {
 		rep(w, 0, n) if (mw[w] < 0) return w;
 		return -1;
 	}
 	void init_phase(int w) {
 		fill(all(cw), false); fill(all(p), -1); cw[w] = true;
-		rep(j, 0, n) { slj[j] = C[w][j] - lw[w] - lj[j]; slwj[j] = w; }
-	}
+		rep(j, 0, n) { slj[j] = C[w][j] - lw[w] - lj[j]; slwj[j] = w; }}
 	void upd(T s) {
 		rep(w, 0, n) lw[w] += s * cw[w];
 		rep(j, 0, n) (p[j] < 0 ? slj : lj)[j] -= s;
@@ -71,14 +68,10 @@ struct Hungarian {
 			rep(j, 0, n)
 				if (p[j] < 0) {
 					T sl = C[w][j] - lw[w] - lj[j];
-					if (slj[j] > sl) { slj[j] = sl; slwj[j] = w; }
-				}
-		}
-	}
+					if (slj[j] > sl) { slj[j] = sl; slwj[j] = w; }}}}
 	vi operator()() {
 		reduce(); init(); match();
 		for (int w = next(); w >= 0; w = next()) {
 			init_phase(w); phase();
 		} return mw;
-	}
-};
+	}};

@@ -8,8 +8,7 @@ int naive(vi w, int t) {
     for (int x : w) {
         for (int i = t-x; i >= 0; --i) {
             if (can_reach[i]) can_reach[i+x] = true;
-        }
-    }
+        }}
     for (int i = t;; i--)
         if (can_reach[i]) return i;
     assert(false);

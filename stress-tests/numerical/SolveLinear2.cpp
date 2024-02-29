@@ -27,8 +27,7 @@ int solve_linear(vector<vd>& A, vd& b, vd& x) {
 			double fac = A[j][i] * bv;
 			b[j] -= fac * b[i];
 			rep(k,i+1,m) A[j][k] -= fac*A[i][k];
-		}
-	}
+		}}
 	if (n < m) return MULT;
 
 	for (int i = m; i--;) {

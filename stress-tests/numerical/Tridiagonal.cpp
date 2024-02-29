@@ -8,8 +8,7 @@ const int inv[] = {0, 1, 4, 5, 2, 3, 6};
 struct T {
 	int x;
 	T() : x(0) {}
-	T(int y) : x(y % mod) { if (x < 0) x += mod; }
-};
+	T(int y) : x(y % mod) { if (x < 0) x += mod; }};
 T operator+(T a, T b) { return {a.x + b.x}; }
 T operator-(T a, T b) { return {a.x - b.x}; }
 T operator*(T a, T b) { return {a.x * b.x}; }
@@ -32,8 +31,7 @@ vector<T> tridiagonal(vector<T> diag, const vector<T>& super,
 		} else {
 			diag[i+1] -= super[i]*sub[i]/diag[i];
 			b[i+1] -= b[i]*sub[i]/diag[i];
-		}
-	}
+		}}
 	if (diag[n-1].x == 0) return {};
 	for (int i = n; i--;) {
 		if (tr[i]) {
@@ -43,8 +41,7 @@ vector<T> tridiagonal(vector<T> diag, const vector<T>& super,
 		} else {
 			b[i] /= diag[i];
 			if (i) b[i-1] -= b[i]*super[i-1];
-		}
-	}
+		}}
 	return b;
 }
 
@@ -155,8 +152,7 @@ fail:;
 					cout << "  " << x[i] << "  " << x2[i].x << endl;
 				}
 				abort();
-			}
-		}
+			}}
 #ifdef BRUTEFORCE
 	});
 	});
@@ -172,9 +168,7 @@ fail:;
 	}
 #endif
 	return 0;
-}
-
-}
+}}
 
 namespace real {
 
@@ -191,8 +185,7 @@ vector<T> tridiagonal(vector<T> diag, const vector<T>& super,
 		} else {
 			diag[i+1] -= super[i]*sub[i]/diag[i];
 			b[i+1] -= b[i]*sub[i]/diag[i];
-		}
-	}
+		}}
 	for (int i = n; i--;) {
 		if (tr[i]) {
 			swap(b[i], b[i-1]);
@@ -201,8 +194,7 @@ vector<T> tridiagonal(vector<T> diag, const vector<T>& super,
 		} else {
 			b[i] /= diag[i];
 			if (i) b[i-1] -= b[i]*super[i-1];
-		}
-	}
+		}}
 	return b;
 }
 
@@ -259,8 +251,7 @@ int positiveDefinite(vector<vd>& A) {
 		rep(j,i+1,n) {
 			double fac = A[j][i] * bv;
 			rep(k,i+1,m) A[j][k] -= fac*A[i][k];
-		}
-	}
+		}}
 	return true;
 }
 
@@ -296,8 +287,7 @@ void rec(T& a, T& b, F f) {
 	for (double x : bf_nice_doubles) {
 		b = a = x;
 		f();
-	}
-}
+	}}
 
 int main() {
 	ll count = 0;
@@ -353,8 +343,7 @@ int main() {
 			done = true;
 			rep(i,0,n) if (abs(x2[i] - x[i]) > 1e-6) {
 				throw false;
-			}
-		} catch (bool) {
+			}} catch (bool) {
 			rep(i,0,n) {
 				rep(j,0,n) cout << mat[i][j] << ' ';
 				cout << "x = " << b[i];
@@ -365,8 +354,7 @@ int main() {
 				cout << endl;
 			}
 			abort();
-		}
-	} skip:;
+		}} skip:;
 #ifdef BRUTEFORCE
 	});
 	});
@@ -383,9 +371,7 @@ int main() {
 #endif
 	cout<<"Tests passed!"<<endl;
 	return 0;
-}
-
-}
+}}
 
 int main() {
 	// finite_field::main();

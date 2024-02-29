@@ -50,8 +50,7 @@ struct MCMF {
 				par[i] = {s, dir};
 				if (its[i] == q.end()) its[i] = q.push({-dist[i], i});
 				else q.modify(its[i], {-dist[i], i});
-			}
-		};
+			}};
 
 		while (!q.empty()) {
 			s = q.top().second; q.pop();
@@ -89,5 +88,4 @@ struct MCMF {
 					if ((v = pi[i] + cost[i][to]) < pi[to])
 						pi[to] = v, ch = 1;
 		assert(it >= 0); // negative cost cycle
-	}
-};
+	}};
